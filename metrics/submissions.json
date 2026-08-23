@@ -12,6 +12,19 @@
             "memory": "43.3 MB",
             "submissionId": "2117322116",
             "timestamp": "1787487915"
+        },
+        "majority-element": {
+            "problemNumber": 169,
+            "title": "Majority Element",
+            "slug": "majority-element",
+            "folder": "0169-majority-element",
+            "difficulty": "Easy",
+            "status": "Accepted",
+            "language": "java",
+            "runtime": "1 ms",
+            "memory": "55.5 MB",
+            "submissionId": "2117453353",
+            "timestamp": "1787495827"
         }
     }
 }
