@@ -62,3 +62,19 @@ DSA-LeetCode-Practice/
 🎯 Goal
 
 Consistently practice Data Structures & Algorithms and maintain a record of my problem-solving progress.
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Array
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0053-maximum-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0053-maximum-subarray/) | Medium |
+## Divide and Conquer
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0053-maximum-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0053-maximum-subarray/) | Medium |
+## Dynamic Programming
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0053-maximum-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0053-maximum-subarray/) | Medium |
+<!---LeetCode Topics End-->
