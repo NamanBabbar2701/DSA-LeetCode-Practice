@@ -1,0 +1,84 @@
+name: LeetCode Sync
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+
+permissions:
+  contents: write
+
+
+jobs:
+
+  sync-leetcode:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # ------------------------------------------
+      # Checkout repository
+      # ------------------------------------------
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ------------------------------------------
+      # Setup Python
+      # ------------------------------------------
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # ------------------------------------------
+      # Install dependencies
+      # ------------------------------------------
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests python-dotenv
+
+      # ------------------------------------------
+      # Run LeetCode sync
+      # ------------------------------------------
+
+      - name: Sync LeetCode data
+        env:
+          LEETCODE_SESSION: ${{ secrets.LEETCODE_SESSION }}
+          LEETCODE_CSRF_TOKEN: ${{ secrets.LEETCODE_CSRF_TOKEN }}
+        run: |
+          python scripts/sync_leetcode.py
+
+      # ------------------------------------------
+      # Commit generated files
+      # ------------------------------------------
+
+      - name: Commit generated files
+        run: |
+
+          git config user.name "github-actions[bot]"
+
+          git config user.email \
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add .
+
+          if git diff --cached --quiet; then
+
+            echo "No changes to commit."
+
+          else
+
+            git commit \
+              -m "chore: sync LeetCode metrics"
+
+            git push
+
+          fi

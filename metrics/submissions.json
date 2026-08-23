@@ -1,0 +1,17 @@
+{
+    "submissions": {
+        "sort-colors": {
+            "problemNumber": 75,
+            "title": "Sort Colors",
+            "slug": "sort-colors",
+            "folder": "0075-sort-colors",
+            "difficulty": "Medium",
+            "status": "Accepted",
+            "language": "java",
+            "runtime": "0 ms",
+            "memory": "43.3 MB",
+            "submissionId": "2117322116",
+            "timestamp": "1787487915"
+        }
+    }
+}

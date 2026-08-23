@@ -1,12 +1,81 @@
+import json
+import os
 import re
-import sys
 from pathlib import Path
 
 import requests
+from dotenv import load_dotenv
 
 
-LEETCODE_GRAPHQL_URL = "https://leetcode.com/graphql"
+# ============================================================
+# Configuration
+# ============================================================
 
+load_dotenv()
+
+LEETCODE_SESSION = os.getenv("LEETCODE_SESSION")
+LEETCODE_CSRF_TOKEN = os.getenv("LEETCODE_CSRF_TOKEN")
+
+GRAPHQL_URL = "https://leetcode.com/graphql"
+
+REPOSITORY_ROOT = (
+    Path(__file__).resolve().parent.parent
+)
+
+METRICS_DIR = REPOSITORY_ROOT / "metrics"
+
+SUBMISSIONS_FILE = (
+    METRICS_DIR / "submissions.json"
+)
+
+STATS_FILE = (
+    METRICS_DIR / "stats.json"
+)
+
+
+# ============================================================
+# Validation
+# ============================================================
+
+if not LEETCODE_SESSION:
+    raise RuntimeError(
+        "LEETCODE_SESSION is missing from .env"
+    )
+
+if not LEETCODE_CSRF_TOKEN:
+    raise RuntimeError(
+        "LEETCODE_CSRF_TOKEN is missing from .env"
+    )
+
+
+# ============================================================
+# HTTP Headers
+# ============================================================
+
+HEADERS = {
+    "Content-Type": "application/json",
+
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/151.0.0.0 Safari/537.36"
+    ),
+
+    "Referer": "https://leetcode.com/",
+    "Origin": "https://leetcode.com",
+
+    "x-csrftoken": LEETCODE_CSRF_TOKEN,
+
+    "Cookie": (
+        f"LEETCODE_SESSION={LEETCODE_SESSION}; "
+        f"csrftoken={LEETCODE_CSRF_TOKEN}"
+    ),
+}
+
+
+# ============================================================
+# GraphQL Queries
+# ============================================================
 
 QUESTION_QUERY = """
 query questionData($titleSlug: String!) {
@@ -25,182 +94,804 @@ query questionData($titleSlug: String!) {
 """
 
 
-def get_repository_root():
-    """
-    Returns the repository root.
+SUBMISSION_QUERY = """
+query submissionList(
+    $offset: Int!
+    $limit: Int!
+) {
+    submissionList(
+        offset: $offset
+        limit: $limit
+    ) {
+        hasNext
 
-    The script expects to be run from the root of
-    DSA-LeetCode-Practice.
-    """
-    return Path.cwd()
-
-
-def extract_slug(folder_name):
-    """
-    Convert:
-
-        0075-sort-colors
-
-    into:
-
-        sort-colors
-    """
-
-    match = re.match(r"^\d{1,4}-(.+)$", folder_name)
-
-    if not match:
-        return None
-
-    return match.group(1)
-
-
-def fetch_question(slug):
-    """
-    Fetch question information from LeetCode GraphQL API.
-    """
-
-    payload = {
-        "query": QUESTION_QUERY,
-        "variables": {
-            "titleSlug": slug
+        submissions {
+            id
+            title
+            titleSlug
+            statusDisplay
+            lang
+            runtime
+            memory
+            timestamp
         }
     }
+}
+"""
+
+
+# ============================================================
+# Generic GraphQL Request
+# ============================================================
+
+def graphql_request(query, variables):
 
     response = requests.post(
-        LEETCODE_GRAPHQL_URL,
-        json=payload,
-        timeout=20
+        GRAPHQL_URL,
+        json={
+            "query": query,
+            "variables": variables,
+        },
+        headers=HEADERS,
+        timeout=30,
     )
 
     response.raise_for_status()
 
     data = response.json()
 
-    if "errors" in data:
-        raise RuntimeError(data["errors"])
+    if data.get("errors"):
+        raise RuntimeError(
+            data["errors"]
+        )
 
-    question = data.get("data", {}).get("question")
-
-    if not question:
-        return None
-
-    return question
+    return data
 
 
-def create_question_markdown(folder, question):
+# ============================================================
+# Fetch Question
+# ============================================================
+
+def fetch_question(slug):
+
+    data = graphql_request(
+        QUESTION_QUERY,
+        {
+            "titleSlug": slug
+        },
+    )
+
+    return (
+        data
+        .get("data", {})
+        .get("question")
+    )
+
+
+# ============================================================
+# Fetch All Recent Submissions
+# ============================================================
+
+def fetch_submissions(required_slugs):
     """
-    Create Question.md inside the problem folder.
+    Fetch LeetCode submissions until we have found
+    the latest submission for every problem that exists
+    in the GitHub repository.
     """
 
-    question_file = folder / "Question.md"
+    submissions = []
 
-    topics = question.get("topicTags", [])
+    found_slugs = set()
+
+    offset = 0
+    limit = 100
+
+    while True:
+
+        print(
+            f"[FETCH] Submissions "
+            f"offset={offset}"
+        )
+
+        data = graphql_request(
+            SUBMISSION_QUERY,
+            {
+                "offset": offset,
+                "limit": limit,
+            },
+        )
+
+        submission_data = (
+            data
+            .get("data", {})
+            .get("submissionList")
+        )
+
+        if not submission_data:
+            break
+
+        batch = submission_data.get(
+            "submissions",
+            []
+        )
+
+        submissions.extend(batch)
+
+        # ----------------------------------------
+        # Find problems we already have
+        # ----------------------------------------
+
+        for submission in batch:
+
+            slug = submission[
+                "titleSlug"
+            ]
+
+            if slug in required_slugs:
+
+                found_slugs.add(slug)
+
+        # ----------------------------------------
+        # Stop when every GitHub problem
+        # has been found
+        # ----------------------------------------
+
+        if found_slugs >= required_slugs:
+
+            print(
+                "[INFO] Found latest submission "
+                "for every GitHub problem."
+            )
+
+            break
+
+        # ----------------------------------------
+        # No more submissions available
+        # ----------------------------------------
+
+        has_next = submission_data.get(
+            "hasNext",
+            False
+        )
+
+        if not has_next:
+            break
+
+        offset += limit
+
+    return submissions
+
+# ============================================================
+# Find GitHub Problems
+# ============================================================
+
+def get_github_problems():
+
+    problems = {}
+
+    for folder in sorted(
+        REPOSITORY_ROOT.iterdir()
+    ):
+
+        if not folder.is_dir():
+            continue
+
+        if folder.name in {
+            "scripts",
+            "metrics",
+            ".git",
+        }:
+            continue
+
+        match = re.match(
+            r"^(\d{1,4})-(.+)$",
+            folder.name,
+        )
+
+        if not match:
+            continue
+
+        problem_number = int(
+            match.group(1)
+        )
+
+        slug = match.group(2)
+
+        problems[slug] = {
+            "number": problem_number,
+            "folder": folder,
+        }
+
+    return problems
+
+
+# ============================================================
+# Create Question.md
+# ============================================================
+
+def create_question_file(
+    folder,
+    question,
+):
+
+    question_file = (
+        folder / "Question.md"
+    )
+
+    # Don't overwrite an existing question.
+    if question_file.exists():
+
+        print(
+            f"[SKIP] Question.md exists: "
+            f"{folder.name}"
+        )
+
+        return
+
+    topics = question.get(
+        "topicTags",
+        []
+    )
 
     topic_names = [
         topic["name"]
         for topic in topics
     ]
 
-    topics_text = ", ".join(topic_names)
+    topics_text = ", ".join(
+        topic_names
+    )
 
-    content = f"""# {question['questionFrontendId']}. {question['title']}
+    content = f"""# {question["questionFrontendId"]}. {question["title"]}
 
-**Difficulty:** {question['difficulty']}
+**Difficulty:** {question["difficulty"]}
 
-**LeetCode:** https://leetcode.com/problems/{question['titleSlug']}/
+**LeetCode:** https://leetcode.com/problems/{question["titleSlug"]}/
 
 **Topics:** {topics_text}
 
 ---
 
-{question['content']}
+{question["content"]}
 """
 
     question_file.write_text(
         content,
-        encoding="utf-8"
+        encoding="utf-8",
     )
 
-    return question_file
+    print(
+        f"[CREATED] Question.md: "
+        f"{folder.name}"
+    )
 
 
-def process_repository(repo_root):
-    """
-    Find all LeetCode problem folders and create
-    Question.md where it does not already exist.
-    """
+# ============================================================
+# Find Latest Submission
+# ============================================================
 
-    processed = 0
-    skipped = 0
-    failed = 0
+def get_latest_submissions(
+    github_problems,
+    submissions,
+):
 
-    for folder in sorted(repo_root.iterdir()):
+    latest = {}
 
-        if not folder.is_dir():
+    # LeetCode returns newest submissions first.
+    for submission in submissions:
+
+        slug = submission[
+            "titleSlug"
+        ]
+
+        # Ignore problems that aren't
+        # part of our GitHub repository.
+        if slug not in github_problems:
             continue
 
-        slug = extract_slug(folder.name)
+        # First occurrence is the latest.
+        if slug not in latest:
 
-        if not slug:
-            continue
+            latest[slug] = submission
 
-        # Make sure this actually looks like a LeetCode
-        # solution folder.
-        solution_files = list(folder.glob("*.*"))
+    return latest
 
-        if not solution_files:
-            continue
 
-        question_file = folder / "Question.md"
+# ============================================================
+# Build Submission Record
+# ============================================================
 
-        if question_file.exists():
-            print(f"[SKIP] {folder.name} - Question.md already exists")
-            skipped += 1
-            continue
+def build_submission_record(
+    slug,
+    question,
+    submission,
+    github_problem,
+):
 
-        print(f"[FETCH] {folder.name} -> {slug}")
+    return {
+        "problemNumber": int(
+            question[
+                "questionFrontendId"
+            ]
+        ),
 
-        try:
-            question = fetch_question(slug)
+        "title": question[
+            "title"
+        ],
 
-            if not question:
-                print(
-                    f"[ERROR] Could not find LeetCode problem: {slug}"
-                )
-                failed += 1
-                continue
+        "slug": slug,
 
-            created_file = create_question_markdown(
-                folder,
-                question
+        "folder": github_problem[
+            "folder"
+        ].name,
+
+        "difficulty": question[
+            "difficulty"
+        ],
+
+        "status": submission[
+            "statusDisplay"
+        ],
+
+        "language": submission[
+            "lang"
+        ],
+
+        "runtime": submission[
+            "runtime"
+        ],
+
+        "memory": submission[
+            "memory"
+        ],
+
+        "submissionId": submission[
+            "id"
+        ],
+
+        "timestamp": submission[
+            "timestamp"
+        ],
+    }
+
+
+# ============================================================
+# Load Existing Submissions
+# ============================================================
+
+def load_existing_submissions():
+
+    if not SUBMISSIONS_FILE.exists():
+
+        return {}
+
+    try:
+
+        with open(
+            SUBMISSIONS_FILE,
+            "r",
+            encoding="utf-8",
+        ) as file:
+
+            data = json.load(file)
+
+        return data.get(
+            "submissions",
+            {}
+        )
+
+    except json.JSONDecodeError:
+
+        print(
+            "[WARNING] Invalid "
+            "submissions.json"
+        )
+
+        return {}
+
+
+# ============================================================
+# Save Submissions
+# ============================================================
+
+def save_submissions(
+    submissions,
+):
+
+    METRICS_DIR.mkdir(
+        exist_ok=True
+    )
+
+    data = {
+        "submissions": submissions
+    }
+
+    with open(
+        SUBMISSIONS_FILE,
+        "w",
+        encoding="utf-8",
+    ) as file:
+
+        json.dump(
+            data,
+            file,
+            indent=4,
+            ensure_ascii=False,
+        )
+
+    print(
+        f"[SAVED] {SUBMISSIONS_FILE}"
+    )
+
+
+# ============================================================
+# Generate Global Statistics
+# ============================================================
+
+def generate_stats(
+    submissions,
+):
+
+    total_problems = len(
+        submissions
+    )
+
+    difficulty = {
+        "Easy": 0,
+        "Medium": 0,
+        "Hard": 0,
+    }
+
+    statuses = {
+        "Accepted": 0,
+        "Wrong Answer": 0,
+        "Time Limit Exceeded": 0,
+        "Memory Limit Exceeded": 0,
+        "Runtime Error": 0,
+        "Compile Error": 0,
+        "Other": 0,
+    }
+
+    languages = {}
+
+    for submission in (
+        submissions.values()
+    ):
+
+        # ----------------------------------------
+        # Difficulty
+        # ----------------------------------------
+
+        problem_difficulty = (
+            submission.get(
+                "difficulty"
             )
+        )
 
-            print(f"[CREATED] {created_file}")
+        if problem_difficulty in difficulty:
 
-            processed += 1
+            difficulty[
+                problem_difficulty
+            ] += 1
 
-        except Exception as error:
-            print(
-                f"[ERROR] {folder.name}: {error}"
-            )
-            failed += 1
+        # ----------------------------------------
+        # Status
+        # ----------------------------------------
 
-    print()
-    print("===================================")
-    print("LeetCode Question Sync Complete")
-    print("===================================")
-    print(f"Created : {processed}")
-    print(f"Skipped : {skipped}")
-    print(f"Failed  : {failed}")
+        status = submission.get(
+            "status",
+            "Other",
+        )
 
+        if status in statuses:
+
+            statuses[status] += 1
+
+        else:
+
+            statuses["Other"] += 1
+
+        # ----------------------------------------
+        # Language
+        # ----------------------------------------
+
+        language = submission.get(
+            "language",
+            "Unknown",
+        )
+
+        languages[language] = (
+            languages.get(
+                language,
+                0,
+            ) + 1
+        )
+
+    # --------------------------------------------
+    # Acceptance Rate
+    # --------------------------------------------
+
+    accepted = statuses[
+        "Accepted"
+    ]
+
+    if total_problems > 0:
+
+        acceptance_rate = round(
+            (
+                accepted
+                / total_problems
+            ) * 100,
+            2,
+        )
+
+    else:
+
+        acceptance_rate = 0.0
+
+    # --------------------------------------------
+    # Final object
+    # --------------------------------------------
+
+    return {
+        "totalProblems": total_problems,
+
+        "difficulty": difficulty,
+
+        "statuses": statuses,
+
+        "languages": languages,
+
+        "acceptanceRate": acceptance_rate,
+    }
+
+
+# ============================================================
+# Save Statistics
+# ============================================================
+
+def save_stats(
+    stats,
+):
+
+    METRICS_DIR.mkdir(
+        exist_ok=True
+    )
+
+    with open(
+        STATS_FILE,
+        "w",
+        encoding="utf-8",
+    ) as file:
+
+        json.dump(
+            stats,
+            file,
+            indent=4,
+            ensure_ascii=False,
+        )
+
+    print(
+        f"[SAVED] {STATS_FILE}"
+    )
+
+
+# ============================================================
+# Main
+# ============================================================
 
 def main():
-    repo_root = get_repository_root()
 
-    print(f"Repository: {repo_root}")
+    print()
+    print(
+        "=========================================="
+    )
+    print(
+        "       LeetCode Repository Sync"
+    )
+    print(
+        "=========================================="
+    )
     print()
 
-    process_repository(repo_root)
+    # --------------------------------------------------------
+    # 1. Find GitHub problems
+    # --------------------------------------------------------
+
+    github_problems = (
+        get_github_problems()
+    )
+
+    print(
+        f"GitHub problems found: "
+        f"{len(github_problems)}"
+    )
+
+    print()
+
+    # --------------------------------------------------------
+    # 2. Fetch question information
+    # --------------------------------------------------------
+
+    print(
+        "Fetching question information..."
+    )
+
+    questions = {}
+
+    for slug, problem in (
+        github_problems.items()
+    ):
+
+        try:
+
+            question = fetch_question(
+                slug
+            )
+
+            if not question:
+
+                print(
+                    f"[ERROR] Question not found: "
+                    f"{slug}"
+                )
+
+                continue
+
+            questions[slug] = question
+
+            create_question_file(
+                problem["folder"],
+                question,
+            )
+
+        except Exception as error:
+
+            print(
+                f"[ERROR] {slug}: "
+                f"{error}"
+            )
+
+    print()
+
+    # --------------------------------------------------------
+    # 3. Fetch submissions
+    # --------------------------------------------------------
+
+    print(
+        "Fetching submission history..."
+    )
+
+    required_slugs = set(
+        github_problems.keys()
+    )
+    
+    submissions = fetch_submissions(
+        required_slugs
+    )
+
+    print(
+        f"Submissions received: "
+        f"{len(submissions)}"
+    )
+
+    print()
+
+    # --------------------------------------------------------
+    # 4. Get latest submission
+    # --------------------------------------------------------
+
+    latest = get_latest_submissions(
+        github_problems,
+        submissions,
+    )
+
+    print(
+        f"GitHub problems with submissions: "
+        f"{len(latest)}"
+    )
+
+    print()
+
+    # --------------------------------------------------------
+    # 5. Load existing metrics
+    # --------------------------------------------------------
+
+    existing = (
+        load_existing_submissions()
+    )
+
+    # --------------------------------------------------------
+    # 6. Update metrics
+    # --------------------------------------------------------
+
+    for slug, submission in (
+        latest.items()
+    ):
+
+        question = questions.get(
+            slug
+        )
+
+        if not question:
+
+            print(
+                f"[SKIP] No question data: "
+                f"{slug}"
+            )
+
+            continue
+
+        problem = github_problems[
+            slug
+        ]
+
+        existing[slug] = (
+            build_submission_record(
+                slug,
+                question,
+                submission,
+                problem,
+            )
+        )
+
+        print(
+            f"[UPDATED] "
+            f"#{problem['number']:04d} "
+            f"{question['title']}"
+        )
+
+    # --------------------------------------------------------
+    # 7. Remove problems no longer in GitHub
+    # --------------------------------------------------------
+
+    github_slugs = set(
+        github_problems.keys()
+    )
+
+    existing = {
+        slug: record
+        for slug, record in (
+            existing.items()
+        )
+        if slug in github_slugs
+    }
+
+    # --------------------------------------------------------
+    # 8. Save submissions.json
+    # --------------------------------------------------------
+
+    save_submissions(
+        existing
+    )
+
+    # --------------------------------------------------------
+    # 9. Generate stats.json
+    # --------------------------------------------------------
+
+    stats = generate_stats(
+        existing
+    )
+
+    save_stats(
+        stats
+    )
+
+    # --------------------------------------------------------
+    # Done
+    # --------------------------------------------------------
+
+    print()
+    print(
+        "=========================================="
+    )
+    print(
+        "              Sync Complete"
+    )
+    print(
+        "=========================================="
+    )
+    print()
 
 
 if __name__ == "__main__":

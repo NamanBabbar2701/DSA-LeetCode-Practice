@@ -1,0 +1,21 @@
+{
+    "totalProblems": 1,
+    "difficulty": {
+        "Easy": 0,
+        "Medium": 1,
+        "Hard": 0
+    },
+    "statuses": {
+        "Accepted": 1,
+        "Wrong Answer": 0,
+        "Time Limit Exceeded": 0,
+        "Memory Limit Exceeded": 0,
+        "Runtime Error": 0,
+        "Compile Error": 0,
+        "Other": 0
+    },
+    "languages": {
+        "java": 1
+    },
+    "acceptanceRate": 100.0
+}
