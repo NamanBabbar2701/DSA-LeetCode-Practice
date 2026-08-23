@@ -675,6 +675,147 @@ def save_stats(
         f"[SAVED] {STATS_FILE}"
     )
 
+def generate_readme(submissions, stats):
+    """
+    Generate the root README.md from submissions.json
+    and stats.json data.
+    """
+
+    readme_file = REPOSITORY_ROOT / "README.md"
+
+    total = stats["totalProblems"]
+
+    difficulty = stats["difficulty"]
+    statuses = stats["statuses"]
+    languages = stats["languages"]
+
+    acceptance_rate = stats["acceptanceRate"]
+
+    difficulty_emoji = {
+        "Easy": "🟢",
+        "Medium": "🟡",
+        "Hard": "🔴",
+    }
+
+    rows = []
+
+    for submission in sorted(
+        submissions.values(),
+        key=lambda item: item["problemNumber"]
+    ):
+
+        number = submission["problemNumber"]
+        title = submission["title"]
+        slug = submission["slug"]
+        difficulty_name = submission["difficulty"]
+        language = submission["language"]
+        runtime = submission["runtime"]
+        memory = submission["memory"]
+        status = submission["status"]
+
+        emoji = difficulty_emoji.get(
+            difficulty_name,
+            "⚪"
+        )
+
+        status_display = (
+            "✅ Accepted"
+            if status == "Accepted"
+            else status
+        )
+
+        rows.append(
+            f"| {number} | "
+            f"[{title}](./{submission['folder']}/) | "
+            f"{emoji} {difficulty_name} | "
+            f"{language} | "
+            f"{runtime} | "
+            f"{memory} | "
+            f"{status_display} |"
+        )
+
+    problem_rows = "\n".join(rows)
+
+    language_rows = "\n".join(
+        f"| {language} | {count} |"
+        for language, count in sorted(
+            languages.items(),
+            key=lambda item: (-item[1], item[0])
+        )
+    )
+
+    content = f"""# DSA LeetCode Practice
+
+A collection of my LeetCode solutions, questions, and submission performance.
+
+> Automatically synchronized from LeetCode using GitHub Actions.
+
+## 📊 Progress
+
+| Metric | Count |
+|---|---:|
+| **Total Problems** | **{total}** |
+| Easy | {difficulty["Easy"]} |
+| Medium | {difficulty["Medium"]} |
+| Hard | {difficulty["Hard"]} |
+
+### Acceptance
+
+**{acceptance_rate}%**
+
+| Status | Count |
+|---|---:|
+| ✅ Accepted | {statuses["Accepted"]} |
+| ❌ Wrong Answer | {statuses["Wrong Answer"]} |
+| ⏱️ Time Limit Exceeded | {statuses["Time Limit Exceeded"]} |
+| 💾 Memory Limit Exceeded | {statuses["Memory Limit Exceeded"]} |
+| ⚠️ Runtime Error | {statuses["Runtime Error"]} |
+| 🔧 Compile Error | {statuses["Compile Error"]} |
+| Other | {statuses["Other"]} |
+
+## 💻 Languages
+
+| Language | Problems |
+|---|---:|
+{language_rows}
+
+## 🧩 Problems
+
+| # | Problem | Difficulty | Language | Runtime | Memory | Status |
+|---:|---|---|---|---:|---:|---|
+{problem_rows}
+
+## 📁 Repository Structure
+
+```text
+DSA-LeetCode-Practice/
+│
+├── 0001-problem-name/
+│   ├── Question.md
+│   └── solution.java
+│
+├── ...
+│
+├── metrics/
+│   ├── submissions.json
+│   └── stats.json
+│
+├── scripts/
+│   └── sync_leetcode.py
+│
+└── README.md
+🎯 Goal
+
+Consistently practice Data Structures & Algorithms and maintain a record of my problem-solving progress.
+"""
+    readme_file.write_text(
+        content,
+        encoding="utf-8"
+    )
+
+    print(
+        f"[SAVED] {readme_file}"
+    )
 
 # ============================================================
 # Main
@@ -874,6 +1015,11 @@ def main():
     )
 
     save_stats(
+        stats
+    )
+    
+    generate_readme(
+        existing,
         stats
     )
 
