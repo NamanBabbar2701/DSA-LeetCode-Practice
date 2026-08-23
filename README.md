@@ -63,3 +63,27 @@ DSA-LeetCode-Practice/
 🎯 Goal
 
 Consistently practice Data Structures & Algorithms and maintain a record of my problem-solving progress.
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Array
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
+## Divide and Conquer
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
+## Dynamic Programming
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
+## Queue
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
+## Monotonic Queue
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
+<!---LeetCode Topics End-->
