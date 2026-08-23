@@ -8,9 +8,9 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Metric | Count |
 |---|---:|
-| **Total Problems** | **3** |
+| **Total Problems** | **4** |
 | Easy | 1 |
-| Medium | 2 |
+| Medium | 3 |
 | Hard | 0 |
 
 ### Acceptance
@@ -19,7 +19,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Status | Count |
 |---|---:|
-| ✅ Accepted | 3 |
+| ✅ Accepted | 4 |
 | ❌ Wrong Answer | 0 |
 | ⏱️ Time Limit Exceeded | 0 |
 | 💾 Memory Limit Exceeded | 0 |
@@ -31,7 +31,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Language | Problems |
 |---|---:|
-| java | 3 |
+| java | 4 |
 
 ## 🧩 Problems
 
@@ -40,6 +40,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 | 53 | [Maximum Subarray](./0053-maximum-subarray/) | 🟡 Medium | java | 1 ms | 77.2 MB | ✅ Accepted |
 | 75 | [Sort Colors](./0075-sort-colors/) | 🟡 Medium | java | 0 ms | 43.3 MB | ✅ Accepted |
 | 169 | [Majority Element](./0169-majority-element/) | 🟢 Easy | java | 1 ms | 55.5 MB | ✅ Accepted |
+| 918 | [Maximum Sum Circular Subarray](./0918-maximum-sum-circular-subarray/) | 🟡 Medium | java | 3 ms | 51.1 MB | ✅ Accepted |
 
 ## 📁 Repository Structure
 
@@ -63,27 +64,3 @@ DSA-LeetCode-Practice/
 🎯 Goal
 
 Consistently practice Data Structures & Algorithms and maintain a record of my problem-solving progress.
-
-<!---LeetCode Topics Start-->
-# LeetCode Topics
-## Array
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
-## Divide and Conquer
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
-## Dynamic Programming
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
-## Queue
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
-## Monotonic Queue
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
-<!---LeetCode Topics End-->

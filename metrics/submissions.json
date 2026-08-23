@@ -38,6 +38,19 @@
             "memory": "77.2 MB",
             "submissionId": "2117648582",
             "timestamp": "1787506556"
+        },
+        "maximum-sum-circular-subarray": {
+            "problemNumber": 918,
+            "title": "Maximum Sum Circular Subarray",
+            "slug": "maximum-sum-circular-subarray",
+            "folder": "0918-maximum-sum-circular-subarray",
+            "difficulty": "Medium",
+            "status": "Accepted",
+            "language": "java",
+            "runtime": "3 ms",
+            "memory": "51.1 MB",
+            "submissionId": "2117691662",
+            "timestamp": "1787508596"
         }
     }
 }
