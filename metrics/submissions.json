@@ -64,6 +64,19 @@
             "memory": "43.9 MB",
             "submissionId": "2119080640",
             "timestamp": "1787625256"
+        },
+        "best-time-to-buy-and-sell-stock": {
+            "problemNumber": 121,
+            "title": "Best Time to Buy and Sell Stock",
+            "slug": "best-time-to-buy-and-sell-stock",
+            "folder": "0121-best-time-to-buy-and-sell-stock",
+            "difficulty": "Easy",
+            "status": "Accepted",
+            "language": "java",
+            "runtime": "2 ms",
+            "memory": "94.7 MB",
+            "submissionId": "2119100672",
+            "timestamp": "1787627418"
         }
     }
 }

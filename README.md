@@ -8,8 +8,8 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Metric | Count |
 |---|---:|
-| **Total Problems** | **5** |
-| Easy | 1 |
+| **Total Problems** | **6** |
+| Easy | 2 |
 | Medium | 4 |
 | Hard | 0 |
 
@@ -19,7 +19,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Status | Count |
 |---|---:|
-| ✅ Accepted | 5 |
+| ✅ Accepted | 6 |
 | ❌ Wrong Answer | 0 |
 | ⏱️ Time Limit Exceeded | 0 |
 | 💾 Memory Limit Exceeded | 0 |
@@ -31,7 +31,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Language | Problems |
 |---|---:|
-| java | 5 |
+| java | 6 |
 
 ## 🧩 Problems
 
@@ -40,6 +40,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 | 48 | [Rotate Image](./0048-rotate-image/) | 🟡 Medium | java | 0 ms | 43.9 MB | ✅ Accepted |
 | 53 | [Maximum Subarray](./0053-maximum-subarray/) | 🟡 Medium | java | 1 ms | 77.2 MB | ✅ Accepted |
 | 75 | [Sort Colors](./0075-sort-colors/) | 🟡 Medium | java | 0 ms | 43.3 MB | ✅ Accepted |
+| 121 | [Best Time to Buy and Sell Stock](./0121-best-time-to-buy-and-sell-stock/) | 🟢 Easy | java | 2 ms | 94.7 MB | ✅ Accepted |
 | 169 | [Majority Element](./0169-majority-element/) | 🟢 Easy | java | 1 ms | 55.5 MB | ✅ Accepted |
 | 918 | [Maximum Sum Circular Subarray](./0918-maximum-sum-circular-subarray/) | 🟡 Medium | java | 3 ms | 51.1 MB | ✅ Accepted |
 
@@ -65,15 +66,3 @@ DSA-LeetCode-Practice/
 🎯 Goal
 
 Consistently practice Data Structures & Algorithms and maintain a record of my problem-solving progress.
-
-<!---LeetCode Topics Start-->
-# LeetCode Topics
-## Array
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0121-best-time-to-buy-and-sell-stock](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0121-best-time-to-buy-and-sell-stock/) | Easy |
-## Dynamic Programming
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0121-best-time-to-buy-and-sell-stock](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0121-best-time-to-buy-and-sell-stock/) | Easy |
-<!---LeetCode Topics End-->
