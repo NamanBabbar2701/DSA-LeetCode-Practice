@@ -68,3 +68,23 @@ DSA-LeetCode-Practice/
 🎯 Goal
 
 Consistently practice Data Structures & Algorithms and maintain a record of my problem-solving progress.
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Array
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1679-max-number-of-k-sum-pairs](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/1679-max-number-of-k-sum-pairs/) | Medium |
+## Hash Table
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1679-max-number-of-k-sum-pairs](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/1679-max-number-of-k-sum-pairs/) | Medium |
+## Two Pointers
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1679-max-number-of-k-sum-pairs](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/1679-max-number-of-k-sum-pairs/) | Medium |
+## Sorting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1679-max-number-of-k-sum-pairs](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/1679-max-number-of-k-sum-pairs/) | Medium |
+<!---LeetCode Topics End-->
