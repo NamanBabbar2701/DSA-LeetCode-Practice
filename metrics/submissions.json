@@ -103,6 +103,19 @@
             "memory": "47.8 MB",
             "submissionId": "2119332634",
             "timestamp": "1787641251"
+        },
+        "max-number-of-k-sum-pairs": {
+            "problemNumber": 1679,
+            "title": "Max Number of K-Sum Pairs",
+            "slug": "max-number-of-k-sum-pairs",
+            "folder": "1679-max-number-of-k-sum-pairs",
+            "difficulty": "Medium",
+            "status": "Accepted",
+            "language": "java",
+            "runtime": "23 ms",
+            "memory": "68.6 MB",
+            "submissionId": "2119631291",
+            "timestamp": "1787661218"
         }
     }
 }
