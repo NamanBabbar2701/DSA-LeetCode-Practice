@@ -77,6 +77,19 @@
             "memory": "94.7 MB",
             "submissionId": "2119100672",
             "timestamp": "1787627418"
+        },
+        "longest-consecutive-sequence": {
+            "problemNumber": 128,
+            "title": "Longest Consecutive Sequence",
+            "slug": "longest-consecutive-sequence",
+            "folder": "0128-longest-consecutive-sequence",
+            "difficulty": "Medium",
+            "status": "Accepted",
+            "language": "java",
+            "runtime": "22 ms",
+            "memory": "77.4 MB",
+            "submissionId": "2119112709",
+            "timestamp": "1787628593"
         }
     }
 }

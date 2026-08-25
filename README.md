@@ -8,9 +8,9 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Metric | Count |
 |---|---:|
-| **Total Problems** | **6** |
+| **Total Problems** | **7** |
 | Easy | 2 |
-| Medium | 4 |
+| Medium | 5 |
 | Hard | 0 |
 
 ### Acceptance
@@ -19,7 +19,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Status | Count |
 |---|---:|
-| ✅ Accepted | 6 |
+| ✅ Accepted | 7 |
 | ❌ Wrong Answer | 0 |
 | ⏱️ Time Limit Exceeded | 0 |
 | 💾 Memory Limit Exceeded | 0 |
@@ -31,7 +31,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Language | Problems |
 |---|---:|
-| java | 6 |
+| java | 7 |
 
 ## 🧩 Problems
 
@@ -41,6 +41,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 | 53 | [Maximum Subarray](./0053-maximum-subarray/) | 🟡 Medium | java | 1 ms | 77.2 MB | ✅ Accepted |
 | 75 | [Sort Colors](./0075-sort-colors/) | 🟡 Medium | java | 0 ms | 43.3 MB | ✅ Accepted |
 | 121 | [Best Time to Buy and Sell Stock](./0121-best-time-to-buy-and-sell-stock/) | 🟢 Easy | java | 2 ms | 94.7 MB | ✅ Accepted |
+| 128 | [Longest Consecutive Sequence](./0128-longest-consecutive-sequence/) | 🟡 Medium | java | 22 ms | 77.4 MB | ✅ Accepted |
 | 169 | [Majority Element](./0169-majority-element/) | 🟢 Easy | java | 1 ms | 55.5 MB | ✅ Accepted |
 | 918 | [Maximum Sum Circular Subarray](./0918-maximum-sum-circular-subarray/) | 🟡 Medium | java | 3 ms | 51.1 MB | ✅ Accepted |
 
@@ -66,19 +67,3 @@ DSA-LeetCode-Practice/
 🎯 Goal
 
 Consistently practice Data Structures & Algorithms and maintain a record of my problem-solving progress.
-
-<!---LeetCode Topics Start-->
-# LeetCode Topics
-## Array
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0128-longest-consecutive-sequence](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0128-longest-consecutive-sequence/) | Medium |
-## Hash Table
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0128-longest-consecutive-sequence](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0128-longest-consecutive-sequence/) | Medium |
-## Union-Find
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0128-longest-consecutive-sequence](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0128-longest-consecutive-sequence/) | Medium |
-<!---LeetCode Topics End-->
