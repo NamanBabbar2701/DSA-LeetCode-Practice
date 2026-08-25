@@ -66,3 +66,19 @@ DSA-LeetCode-Practice/
 🎯 Goal
 
 Consistently practice Data Structures & Algorithms and maintain a record of my problem-solving progress.
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Array
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0128-longest-consecutive-sequence](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0128-longest-consecutive-sequence/) | Medium |
+## Hash Table
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0128-longest-consecutive-sequence](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0128-longest-consecutive-sequence/) | Medium |
+## Union-Find
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0128-longest-consecutive-sequence](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0128-longest-consecutive-sequence/) | Medium |
+<!---LeetCode Topics End-->
