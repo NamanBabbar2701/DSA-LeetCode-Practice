@@ -68,3 +68,19 @@ DSA-LeetCode-Practice/
 🎯 Goal
 
 Consistently practice Data Structures & Algorithms and maintain a record of my problem-solving progress.
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Array
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0073-set-matrix-zeroes](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0073-set-matrix-zeroes/) | Medium |
+## Hash Table
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0073-set-matrix-zeroes](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0073-set-matrix-zeroes/) | Medium |
+## Matrix
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0073-set-matrix-zeroes](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0073-set-matrix-zeroes/) | Medium |
+<!---LeetCode Topics End-->
