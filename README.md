@@ -8,9 +8,9 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Metric | Count |
 |---|---:|
-| **Total Problems** | **9** |
+| **Total Problems** | **10** |
 | Easy | 2 |
-| Medium | 7 |
+| Medium | 8 |
 | Hard | 0 |
 
 ### Acceptance
@@ -19,7 +19,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Status | Count |
 |---|---:|
-| ✅ Accepted | 9 |
+| ✅ Accepted | 10 |
 | ❌ Wrong Answer | 0 |
 | ⏱️ Time Limit Exceeded | 0 |
 | 💾 Memory Limit Exceeded | 0 |
@@ -31,7 +31,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Language | Problems |
 |---|---:|
-| java | 9 |
+| java | 10 |
 
 ## 🧩 Problems
 
@@ -43,6 +43,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 | 75 | [Sort Colors](./0075-sort-colors/) | 🟡 Medium | java | 0 ms | 43.3 MB | ✅ Accepted |
 | 121 | [Best Time to Buy and Sell Stock](./0121-best-time-to-buy-and-sell-stock/) | 🟢 Easy | java | 2 ms | 94.7 MB | ✅ Accepted |
 | 128 | [Longest Consecutive Sequence](./0128-longest-consecutive-sequence/) | 🟡 Medium | java | 22 ms | 77.4 MB | ✅ Accepted |
+| 167 | [Two Sum II - Input Array Is Sorted](./0167-two-sum-ii-input-array-is-sorted/) | 🟡 Medium | java | 2 ms | 48.2 MB | ✅ Accepted |
 | 169 | [Majority Element](./0169-majority-element/) | 🟢 Easy | java | 1 ms | 55.5 MB | ✅ Accepted |
 | 918 | [Maximum Sum Circular Subarray](./0918-maximum-sum-circular-subarray/) | 🟡 Medium | java | 3 ms | 51.1 MB | ✅ Accepted |
 | 1679 | [Max Number of K-Sum Pairs](./1679-max-number-of-k-sum-pairs/) | 🟡 Medium | java | 23 ms | 68.6 MB | ✅ Accepted |
@@ -69,19 +70,3 @@ DSA-LeetCode-Practice/
 🎯 Goal
 
 Consistently practice Data Structures & Algorithms and maintain a record of my problem-solving progress.
-
-<!---LeetCode Topics Start-->
-# LeetCode Topics
-## Array
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0167-two-sum-ii-input-array-is-sorted](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0167-two-sum-ii-input-array-is-sorted/) | Medium |
-## Two Pointers
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0167-two-sum-ii-input-array-is-sorted](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0167-two-sum-ii-input-array-is-sorted/) | Medium |
-## Binary Search
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0167-two-sum-ii-input-array-is-sorted](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0167-two-sum-ii-input-array-is-sorted/) | Medium |
-<!---LeetCode Topics End-->

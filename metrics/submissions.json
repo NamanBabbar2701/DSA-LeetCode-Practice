@@ -116,6 +116,19 @@
             "memory": "68.6 MB",
             "submissionId": "2119631291",
             "timestamp": "1787661218"
+        },
+        "two-sum-ii-input-array-is-sorted": {
+            "problemNumber": 167,
+            "title": "Two Sum II - Input Array Is Sorted",
+            "slug": "two-sum-ii-input-array-is-sorted",
+            "folder": "0167-two-sum-ii-input-array-is-sorted",
+            "difficulty": "Medium",
+            "status": "Accepted",
+            "language": "java",
+            "runtime": "2 ms",
+            "memory": "48.2 MB",
+            "submissionId": "2119640036",
+            "timestamp": "1787661830"
         }
     }
 }
