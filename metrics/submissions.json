@@ -90,6 +90,19 @@
             "memory": "77.4 MB",
             "submissionId": "2119112709",
             "timestamp": "1787628593"
+        },
+        "set-matrix-zeroes": {
+            "problemNumber": 73,
+            "title": "Set Matrix Zeroes",
+            "slug": "set-matrix-zeroes",
+            "folder": "0073-set-matrix-zeroes",
+            "difficulty": "Medium",
+            "status": "Accepted",
+            "language": "java",
+            "runtime": "1 ms",
+            "memory": "46.8 MB",
+            "submissionId": "2119143078",
+            "timestamp": "1787630960"
         }
     }
 }
