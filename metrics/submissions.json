@@ -51,6 +51,19 @@
             "memory": "51.1 MB",
             "submissionId": "2117691662",
             "timestamp": "1787508596"
+        },
+        "rotate-image": {
+            "problemNumber": 48,
+            "title": "Rotate Image",
+            "slug": "rotate-image",
+            "folder": "0048-rotate-image",
+            "difficulty": "Medium",
+            "status": "Accepted",
+            "language": "java",
+            "runtime": "0 ms",
+            "memory": "43.9 MB",
+            "submissionId": "2119080640",
+            "timestamp": "1787625256"
         }
     }
 }

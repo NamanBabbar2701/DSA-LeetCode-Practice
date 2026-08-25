@@ -8,9 +8,9 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Metric | Count |
 |---|---:|
-| **Total Problems** | **4** |
+| **Total Problems** | **5** |
 | Easy | 1 |
-| Medium | 3 |
+| Medium | 4 |
 | Hard | 0 |
 
 ### Acceptance
@@ -19,7 +19,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Status | Count |
 |---|---:|
-| ✅ Accepted | 4 |
+| ✅ Accepted | 5 |
 | ❌ Wrong Answer | 0 |
 | ⏱️ Time Limit Exceeded | 0 |
 | 💾 Memory Limit Exceeded | 0 |
@@ -31,12 +31,13 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Language | Problems |
 |---|---:|
-| java | 4 |
+| java | 5 |
 
 ## 🧩 Problems
 
 | # | Problem | Difficulty | Language | Runtime | Memory | Status |
 |---:|---|---|---|---:|---:|---|
+| 48 | [Rotate Image](./0048-rotate-image/) | 🟡 Medium | java | 0 ms | 43.9 MB | ✅ Accepted |
 | 53 | [Maximum Subarray](./0053-maximum-subarray/) | 🟡 Medium | java | 1 ms | 77.2 MB | ✅ Accepted |
 | 75 | [Sort Colors](./0075-sort-colors/) | 🟡 Medium | java | 0 ms | 43.3 MB | ✅ Accepted |
 | 169 | [Majority Element](./0169-majority-element/) | 🟢 Easy | java | 1 ms | 55.5 MB | ✅ Accepted |
@@ -64,19 +65,3 @@ DSA-LeetCode-Practice/
 🎯 Goal
 
 Consistently practice Data Structures & Algorithms and maintain a record of my problem-solving progress.
-
-<!---LeetCode Topics Start-->
-# LeetCode Topics
-## Array
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0048-rotate-image](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0048-rotate-image/) | Medium |
-## Math
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0048-rotate-image](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0048-rotate-image/) | Medium |
-## Matrix
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0048-rotate-image](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0048-rotate-image/) | Medium |
-<!---LeetCode Topics End-->
