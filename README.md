@@ -71,3 +71,11 @@ DSA-LeetCode-Practice/
 🎯 Goal
 
 Consistently practice Data Structures & Algorithms and maintain a record of my problem-solving progress.
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Array
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0485-max-consecutive-ones](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0485-max-consecutive-ones/) | Easy |
+<!---LeetCode Topics End-->
