@@ -142,6 +142,19 @@
             "memory": "60.1 MB",
             "submissionId": "2121398399",
             "timestamp": "1787797821"
+        },
+        "max-consecutive-ones": {
+            "problemNumber": 485,
+            "title": "Max Consecutive Ones",
+            "slug": "max-consecutive-ones",
+            "folder": "0485-max-consecutive-ones",
+            "difficulty": "Easy",
+            "status": "Accepted",
+            "language": "java",
+            "runtime": "3 ms",
+            "memory": "52 MB",
+            "submissionId": "2121410452",
+            "timestamp": "1787799454"
         }
     }
 }
