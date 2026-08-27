@@ -8,9 +8,9 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Metric | Count |
 |---|---:|
-| **Total Problems** | **12** |
+| **Total Problems** | **13** |
 | Easy | 3 |
-| Medium | 9 |
+| Medium | 10 |
 | Hard | 0 |
 
 ### Acceptance
@@ -19,7 +19,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Status | Count |
 |---|---:|
-| ✅ Accepted | 12 |
+| ✅ Accepted | 13 |
 | ❌ Wrong Answer | 0 |
 | ⏱️ Time Limit Exceeded | 0 |
 | 💾 Memory Limit Exceeded | 0 |
@@ -31,7 +31,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Language | Problems |
 |---|---:|
-| java | 12 |
+| java | 13 |
 
 ## 🧩 Problems
 
@@ -48,6 +48,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 | 169 | [Majority Element](./0169-majority-element/) | 🟢 Easy | java | 1 ms | 55.5 MB | ✅ Accepted |
 | 485 | [Max Consecutive Ones](./0485-max-consecutive-ones/) | 🟢 Easy | java | 3 ms | 52 MB | ✅ Accepted |
 | 918 | [Maximum Sum Circular Subarray](./0918-maximum-sum-circular-subarray/) | 🟡 Medium | java | 3 ms | 51.1 MB | ✅ Accepted |
+| 1004 | [Max Consecutive Ones III](./1004-max-consecutive-ones-iii/) | 🟡 Medium | java | 3 ms | 51.7 MB | ✅ Accepted |
 | 1679 | [Max Number of K-Sum Pairs](./1679-max-number-of-k-sum-pairs/) | 🟡 Medium | java | 23 ms | 68.6 MB | ✅ Accepted |
 
 ## 📁 Repository Structure
@@ -72,23 +73,3 @@ DSA-LeetCode-Practice/
 🎯 Goal
 
 Consistently practice Data Structures & Algorithms and maintain a record of my problem-solving progress.
-
-<!---LeetCode Topics Start-->
-# LeetCode Topics
-## Array
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [1004-max-consecutive-ones-iii](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/1004-max-consecutive-ones-iii/) | Medium |
-## Binary Search
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [1004-max-consecutive-ones-iii](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/1004-max-consecutive-ones-iii/) | Medium |
-## Sliding Window
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [1004-max-consecutive-ones-iii](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/1004-max-consecutive-ones-iii/) | Medium |
-## Prefix Sum
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [1004-max-consecutive-ones-iii](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/1004-max-consecutive-ones-iii/) | Medium |
-<!---LeetCode Topics End-->

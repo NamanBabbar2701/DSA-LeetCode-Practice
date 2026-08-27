@@ -155,6 +155,19 @@
             "memory": "52 MB",
             "submissionId": "2121410452",
             "timestamp": "1787799454"
+        },
+        "max-consecutive-ones-iii": {
+            "problemNumber": 1004,
+            "title": "Max Consecutive Ones III",
+            "slug": "max-consecutive-ones-iii",
+            "folder": "1004-max-consecutive-ones-iii",
+            "difficulty": "Medium",
+            "status": "Accepted",
+            "language": "java",
+            "runtime": "3 ms",
+            "memory": "51.7 MB",
+            "submissionId": "2121427971",
+            "timestamp": "1787801557"
         }
     }
 }

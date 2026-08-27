@@ -1,12 +1,12 @@
 {
-    "totalProblems": 12,
+    "totalProblems": 13,
     "difficulty": {
         "Easy": 3,
-        "Medium": 9,
+        "Medium": 10,
         "Hard": 0
     },
     "statuses": {
-        "Accepted": 12,
+        "Accepted": 13,
         "Wrong Answer": 0,
         "Time Limit Exceeded": 0,
         "Memory Limit Exceeded": 0,
@@ -15,7 +15,7 @@
         "Other": 0
     },
     "languages": {
-        "java": 12
+        "java": 13
     },
     "acceptanceRate": 100.0
 }
