@@ -8,9 +8,9 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Metric | Count |
 |---|---:|
-| **Total Problems** | **10** |
+| **Total Problems** | **11** |
 | Easy | 2 |
-| Medium | 8 |
+| Medium | 9 |
 | Hard | 0 |
 
 ### Acceptance
@@ -19,7 +19,7 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Status | Count |
 |---|---:|
-| ✅ Accepted | 10 |
+| ✅ Accepted | 11 |
 | ❌ Wrong Answer | 0 |
 | ⏱️ Time Limit Exceeded | 0 |
 | 💾 Memory Limit Exceeded | 0 |
@@ -31,12 +31,13 @@ A collection of my LeetCode solutions, questions, and submission performance.
 
 | Language | Problems |
 |---|---:|
-| java | 10 |
+| java | 11 |
 
 ## 🧩 Problems
 
 | # | Problem | Difficulty | Language | Runtime | Memory | Status |
 |---:|---|---|---|---:|---:|---|
+| 15 | [3Sum](./0015-3sum/) | 🟡 Medium | java | 39 ms | 60.1 MB | ✅ Accepted |
 | 48 | [Rotate Image](./0048-rotate-image/) | 🟡 Medium | java | 0 ms | 43.9 MB | ✅ Accepted |
 | 53 | [Maximum Subarray](./0053-maximum-subarray/) | 🟡 Medium | java | 1 ms | 77.2 MB | ✅ Accepted |
 | 73 | [Set Matrix Zeroes](./0073-set-matrix-zeroes/) | 🟡 Medium | java | 1 ms | 47.8 MB | ✅ Accepted |
@@ -70,19 +71,3 @@ DSA-LeetCode-Practice/
 🎯 Goal
 
 Consistently practice Data Structures & Algorithms and maintain a record of my problem-solving progress.
-
-<!---LeetCode Topics Start-->
-# LeetCode Topics
-## Array
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0015-3sum](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0015-3sum/) | Medium |
-## Two Pointers
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0015-3sum](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0015-3sum/) | Medium |
-## Sorting
-| Problem Name | Difficulty |
-| ------- | ------- |
-| [0015-3sum](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0015-3sum/) | Medium |
-<!---LeetCode Topics End-->

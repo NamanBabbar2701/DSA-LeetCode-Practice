@@ -129,6 +129,19 @@
             "memory": "48.2 MB",
             "submissionId": "2119640036",
             "timestamp": "1787661830"
+        },
+        "3sum": {
+            "problemNumber": 15,
+            "title": "3Sum",
+            "slug": "3sum",
+            "folder": "0015-3sum",
+            "difficulty": "Medium",
+            "status": "Accepted",
+            "language": "java",
+            "runtime": "39 ms",
+            "memory": "60.1 MB",
+            "submissionId": "2121398399",
+            "timestamp": "1787797821"
         }
     }
 }
