@@ -79,15 +79,18 @@ Consistently practice Data Structures & Algorithms and maintain a record of my p
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0015-3sum](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0015-3sum/) | Medium |
 | [0075-sort-colors](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0075-sort-colors/) | Medium |
 | [0169-majority-element](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0169-majority-element/) | Easy |
 ## Two Pointers
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0015-3sum](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0015-3sum/) | Medium |
 | [0075-sort-colors](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0075-sort-colors/) | Medium |
 ## Sorting
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0015-3sum](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0015-3sum/) | Medium |
 | [0075-sort-colors](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0075-sort-colors/) | Medium |
 | [0169-majority-element](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0169-majority-element/) | Easy |
 ## Quicksort
