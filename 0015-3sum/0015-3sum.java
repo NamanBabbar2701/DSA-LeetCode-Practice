@@ -1,4 +1,21 @@
 class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<>();
+        Arrays.sort(nums);
+        for(int i = 0 ; i < nums.length ; i++){
+            if(i > 0 && nums[i - 1] == nums[i]){
+                continue;
+            }
+            List<List<Integer>> pair = twoSum(nums, i+1 , nums.length-1 , -nums[i]);
+
+            for(List<Integer> trip : pair){
+                trip.add(0, nums[i]);
+                ans.add(trip);
+            }
+        }
+        return ans;        
+    }
+
     public List<List<Integer>> twoSum(int[] nums , int l , int r, int target){
         List<List<Integer>> res = new ArrayList<>();
 
@@ -18,28 +35,10 @@ class Solution {
                 res.add(pair);
                 l++;
                 r--;
-            }else if(sum < target){
-                l++;
-            }else r--; 
-        }
+            }else if(sum > target){
+                r--;
+            }else l++;
+        } 
         return res;
-    }
-    public List<List<Integer>> threeSum(int[] nums) {
-        Arrays.sort(nums);
-
-        List<List<Integer>> ans = new ArrayList<>();
-
-        for(int i = 0 ; i < nums.length ; i++){
-            if(i > 0 && nums[i-1] == nums[i]){
-                continue;
-            }
-            List<List<Integer>> pair = twoSum(nums, i+1 , nums.length-1 , -nums[i]);
-            
-            for(List<Integer> trip: pair){
-                trip.add(0, nums[i]);
-                ans.add(trip);
-            }
-        }
-        return ans;
     }
 }
