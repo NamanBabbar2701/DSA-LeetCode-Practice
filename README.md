@@ -80,6 +80,7 @@ Consistently practice Data Structures & Algorithms and maintain a record of my p
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0075-sort-colors](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0075-sort-colors/) | Medium |
+| [0169-majority-element](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0169-majority-element/) | Easy |
 ## Two Pointers
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -88,6 +89,7 @@ Consistently practice Data Structures & Algorithms and maintain a record of my p
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0075-sort-colors](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0075-sort-colors/) | Medium |
+| [0169-majority-element](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0169-majority-element/) | Easy |
 ## Quicksort
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -96,4 +98,20 @@ Consistently practice Data Structures & Algorithms and maintain a record of my p
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0075-sort-colors](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0075-sort-colors/) | Medium |
+## Hash Table
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0169-majority-element](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0169-majority-element/) | Easy |
+## Divide and Conquer
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0169-majority-element](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0169-majority-element/) | Easy |
+## Counting
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0169-majority-element](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0169-majority-element/) | Easy |
+## Boyer–Moore Majority Vote Algorithm
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0169-majority-element](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0169-majority-element/) | Easy |
 <!---LeetCode Topics End-->
