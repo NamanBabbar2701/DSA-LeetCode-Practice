@@ -83,6 +83,7 @@ Consistently practice Data Structures & Algorithms and maintain a record of my p
 | [0053-maximum-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0053-maximum-subarray/) | Medium |
 | [0075-sort-colors](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0075-sort-colors/) | Medium |
 | [0169-majority-element](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0169-majority-element/) | Easy |
+| [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
 ## Two Pointers
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -111,6 +112,7 @@ Consistently practice Data Structures & Algorithms and maintain a record of my p
 | ------- | ------- |
 | [0053-maximum-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0053-maximum-subarray/) | Medium |
 | [0169-majority-element](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0169-majority-element/) | Easy |
+| [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
 ## Counting
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -123,4 +125,13 @@ Consistently practice Data Structures & Algorithms and maintain a record of my p
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0053-maximum-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0053-maximum-subarray/) | Medium |
+| [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
+## Queue
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
+## Monotonic Queue
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
 <!---LeetCode Topics End-->
