@@ -82,6 +82,7 @@ Consistently practice Data Structures & Algorithms and maintain a record of my p
 | [0015-3sum](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0015-3sum/) | Medium |
 | [0048-rotate-image](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0048-rotate-image/) | Medium |
 | [0053-maximum-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0053-maximum-subarray/) | Medium |
+| [0073-set-matrix-zeroes](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0073-set-matrix-zeroes/) | Medium |
 | [0075-sort-colors](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0075-sort-colors/) | Medium |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0121-best-time-to-buy-and-sell-stock/) | Easy |
 | [0128-longest-consecutive-sequence](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0128-longest-consecutive-sequence/) | Medium |
@@ -109,6 +110,7 @@ Consistently practice Data Structures & Algorithms and maintain a record of my p
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0073-set-matrix-zeroes](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0073-set-matrix-zeroes/) | Medium |
 | [0128-longest-consecutive-sequence](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0128-longest-consecutive-sequence/) | Medium |
 | [0169-majority-element](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0169-majority-element/) | Easy |
 ## Divide and Conquer
@@ -147,6 +149,7 @@ Consistently practice Data Structures & Algorithms and maintain a record of my p
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0048-rotate-image](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0048-rotate-image/) | Medium |
+| [0073-set-matrix-zeroes](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0073-set-matrix-zeroes/) | Medium |
 ## Union-Find
 | Problem Name | Difficulty |
 | ------- | ------- |
