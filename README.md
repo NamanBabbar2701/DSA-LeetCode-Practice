@@ -83,6 +83,7 @@ Consistently practice Data Structures & Algorithms and maintain a record of my p
 | [0048-rotate-image](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0048-rotate-image/) | Medium |
 | [0053-maximum-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0053-maximum-subarray/) | Medium |
 | [0075-sort-colors](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0075-sort-colors/) | Medium |
+| [0121-best-time-to-buy-and-sell-stock](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0121-best-time-to-buy-and-sell-stock/) | Easy |
 | [0169-majority-element](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0169-majority-element/) | Easy |
 | [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
 ## Two Pointers
@@ -126,6 +127,7 @@ Consistently practice Data Structures & Algorithms and maintain a record of my p
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0053-maximum-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0053-maximum-subarray/) | Medium |
+| [0121-best-time-to-buy-and-sell-stock](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0121-best-time-to-buy-and-sell-stock/) | Easy |
 | [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
 ## Queue
 | Problem Name | Difficulty |
