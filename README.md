@@ -88,6 +88,7 @@ Consistently practice Data Structures & Algorithms and maintain a record of my p
 | [0128-longest-consecutive-sequence](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0128-longest-consecutive-sequence/) | Medium |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0167-two-sum-ii-input-array-is-sorted/) | Medium |
 | [0169-majority-element](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0169-majority-element/) | Easy |
+| [0485-max-consecutive-ones](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0485-max-consecutive-ones/) | Easy |
 | [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
 ## Two Pointers
 | Problem Name | Difficulty |
