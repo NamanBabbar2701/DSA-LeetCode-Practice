@@ -90,6 +90,7 @@ Consistently practice Data Structures & Algorithms and maintain a record of my p
 | [0169-majority-element](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0169-majority-element/) | Easy |
 | [0485-max-consecutive-ones](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0485-max-consecutive-ones/) | Easy |
 | [0918-maximum-sum-circular-subarray](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0918-maximum-sum-circular-subarray/) | Medium |
+| [1004-max-consecutive-ones-iii](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/1004-max-consecutive-ones-iii/) | Medium |
 ## Two Pointers
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -161,4 +162,13 @@ Consistently practice Data Structures & Algorithms and maintain a record of my p
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/0167-two-sum-ii-input-array-is-sorted/) | Medium |
+| [1004-max-consecutive-ones-iii](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/1004-max-consecutive-ones-iii/) | Medium |
+## Sliding Window
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1004-max-consecutive-ones-iii](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/1004-max-consecutive-ones-iii/) | Medium |
+## Prefix Sum
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [1004-max-consecutive-ones-iii](https://github.com/NamanBabbar2701/DSA-LeetCode-Practice/tree/main/1004-max-consecutive-ones-iii/) | Medium |
 <!---LeetCode Topics End-->
